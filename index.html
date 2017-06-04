@@ -33,7 +33,7 @@
                 var parsed = getJsonFromUrlParams(parameters)
                 var inputs = "<table>";
                 for(key in parsed){
-                    inputs += "<tr><td>" + key + "</td><td><input type=\"text\" value=\"" + parsed[key] + "\"" + " name=\"" + encodeURIComponent(key) + "\"></td></tr>\r\n";
+                    inputs += "<tr><td>" + key + "</td><td><input type=\"text\" value=\"" + parsed[key] + "\"" + " name=\"" + decodeURIComponent(key) + "\"></td></tr>\r\n";
                 }
                 inputs += "</table>";
                 var poc = "<html><form enctype=\"" + encodingType + "\" method=\"" + method + "\" action=\"" + uri + "\">" + inputs + "<input type=\"submit\" value=\"" + uri + "\">" + "</form></html>";
